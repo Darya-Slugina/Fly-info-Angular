@@ -1,0 +1,194 @@
+.card {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  .mainFlightInfo {
+    border-top: 3px solid orange;
+    .mainInfo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      .main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        h2 {
+          font-size: 15px;
+          color: rgb(19, 43, 114);
+          margin: 10px;
+        }
+      }
+      .additional {
+        margin-right: 10px;
+
+        .title {
+          color: rgb(119, 119, 119);
+          font-size: 13px;
+          margin-right: 5px;
+
+          .text {
+            color: rgb(95, 95, 95);
+            margin-right: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    .flightInfo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      margin-left: 15px;
+      justify-content: space-between;
+
+      .left {
+        .top {
+          .direction {
+            font-size: 15px;
+            color: rgb(19, 43, 114);
+          }
+          .img {
+            width: 120px;
+          }
+        }
+
+        .bottom {
+          width: 180px;
+          text-align: center;
+
+          .airplaneInfo {
+            text-align: center;
+            font-size: 10px;
+            color: rgb(19, 43, 114);
+          }
+        }
+      }
+
+      .right {
+        justify-content: flex-end;
+        margin-top: 10px;
+        width: 800px;
+        text-align: end;
+        font-size: 16px;
+
+        .dotAtRisk {
+          width: 8px;
+          height: 8px;
+          background-color: orange;
+          margin: 2px;
+          display: inline-block;
+        }
+
+        .dotFailed {
+          width: 8px;
+          height: 8px;
+          background-color: rgb(189, 41, 41);
+          margin: 2px;
+          display: inline-block;
+        }
+
+        .dotSuccess {
+          width: 8px;
+          height: 8px;
+          background-color: rgb(0, 255, 34);
+          margin: 2px;
+          display: inline-block;
+        }
+
+        .dotMissing {
+          width: 8px;
+          height: 8px;
+          background-color: rgb(4, 0, 255);
+          margin: 2px;
+          display: inline-block;
+        }
+
+        .dotUpcoming {
+          width: 8px;
+          height: 8px;
+          background-color: rgb(124, 124, 124);
+          margin: 2px;
+          display: inline-block;
+        }
+
+        .title {
+          color: rgb(77, 77, 77);
+          margin-right: 10px;
+
+          .text {
+            color: black;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .timeInfo {
+    background-color: rgb(241, 241, 241);
+    height: 120px;
+
+    .iconContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-left: 15px;
+      padding-top: 15px;
+
+      .flightIcons {
+        font-size: 12px;
+        border: 1px solid rgb(1, 136, 19);
+        background-color: white;
+        color: rgb(1, 136, 19);
+        margin-right: 5px;
+        padding: 3px;
+
+        &:hover {
+          background-color: rgb(218, 218, 218);
+        }
+      }
+    }
+  }
+  .cardHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+    .card {
+      background-color: white;
+      border-radius: 5px;
+      border: none;
+      width: 300px;
+      height: 40px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .achived {
+        display: flex;
+        align-items: center;
+        color: green;
+        padding-left: 10px;
+        text-align: center;
+        padding-right: 15px;
+        border-right: 1px solid grey;
+      }
+
+      .time {
+        color: grey;
+        padding-right: 10px;
+        display: flex;
+      }
+    }
+  }
+}

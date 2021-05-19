@@ -1,0 +1,104 @@
+<div class="card" *ngFor="let flight of flights">
+  <div class="mainFlightInfo">
+    <div class="mainInfo">
+      <div class="main">
+        <h2>AWB:{{ flight.id }}</h2>
+        <app-button [text]="'EAWB'"></app-button>
+        <app-button [text]="'Qualified'"></app-button>
+        <app-button [text]="'Partner'"></app-button>
+      </div>
+      <div class="additional">
+        <span class="title"
+          >Product <Strong class="text">{{ flight.product }}</Strong></span
+        >
+        <span class="title"
+          >SHC <Strong class="text">{{ flight.shc }}</Strong></span
+        >
+        <span class="title"
+          >Shipper <Strong class="text">{{ flight.shipper }}</Strong></span
+        >
+        <span class="title"
+          >Forwarder <Strong class="text">{{ flight.forwarder }}</Strong></span
+        >
+      </div>
+    </div>
+    <div class="flightInfo">
+      <div class="left">
+        <div class="top">
+          <span class="direction"> {{ flight.from }}</span>
+          <img [src]="flight.imgURL" class="img" />
+          <span class="direction">{{ flight.to }}</span>
+        </div>
+        <div class="bottom">
+          <span class="airplaneInfo">{{ flight.airplaneType }}</span>
+        </div>
+      </div>
+
+      <div class="right">
+        <span class="title">
+          Total Milestones
+          <span class="text">
+            {{
+              flight.milestones.atRisk +
+                flight.milestones.failed +
+                flight.milestones.success +
+                flight.milestones.missing +
+                flight.milestones.upcoming
+            }}</span
+          ></span
+        >
+        <span class="dotAtRisk"></span>
+        <span class="title">
+          At Risk
+          <span class="text"> {{ flight.milestones.atRisk }}</span></span
+        >
+        <span class="dotFailed"></span>
+        <span class="title">
+          Failed <span class="text">{{ flight.milestones.failed }}</span></span
+        >
+        <span class="dotSuccess"></span>
+        <span class="title">
+          Success
+          <span class="text">{{ flight.milestones.success }}</span></span
+        >
+        <span class="dotMissing"></span>
+        <span class="title">
+          Missing
+          <span class="text">{{ flight.milestones.missing }}</span></span
+        >
+        <span class="dotUpcoming"></span>
+        <span class="title">
+          Upcoming
+          <span class="text">{{ flight.milestones.upcoming }}</span></span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="timeInfo">
+    <div class="iconContainer">
+      <span *ngFor="let item of flightsTitles" class="flightIcons">{{
+        item.name
+      }}</span>
+    </div>
+    <div class="cardHolder">
+      <div class="card">
+        <span class="achived"
+          >Last Achieved &nbsp; ARR
+          <img width="20" src="../../assets/img/plane.png" class="planeImg"
+        /></span>
+        <span class="time">Actual Time &nbsp;{{ flight.actualTime }}</span>
+      </div>
+      <div class="card">
+        <span class="achived" style="color:blueviolet"
+          >Next Upcoming &nbsp; RCF
+          <img width="20" src="../../assets/img/plane.png" class="planeImg"
+        /></span>
+        <span class="time">Planned Time &nbsp;{{ flight.plannedTime }}</span>
+      </div>
+      <div class="card">
+        <span class="achived" style="color: rgb(77, 78, 100);">Total Transportation Time</span>
+        <span class="time">{{ flight.totalTime }}</span>
+      </div>
+    </div>
+  </div>
+</div>
