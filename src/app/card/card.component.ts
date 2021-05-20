@@ -9,14 +9,19 @@ import { FLIGHTSTITLES } from '../../mock-flight';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  flights?: Flight[];
-  flightsTitles = FLIGHTSTITLES;
+  public flights: Flight[] = [];
+  public flightsTitles = FLIGHTSTITLES;
+  public total: number = 0;
 
   constructor(private flightServ: FlightService) {}
 
   ngOnInit() {
-    this.flightServ.getFlight().subscribe((data) => (this.flights = data),
-      
-    );
+    this.flightServ.getFlight().subscribe((data) => (this.flights = data));
+    this.total =
+      this.flights[0].milestones.atRisk +
+      this.flights[0].milestones.failed +
+      this.flights[0].milestones.success +
+      this.flights[0].milestones.missing +
+      this.flights[0].milestones.upcoming;
   }
 }

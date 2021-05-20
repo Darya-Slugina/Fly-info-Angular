@@ -38,13 +38,7 @@
         <span class="title">
           Total Milestones
           <span class="text">
-            {{
-              flight.milestones.atRisk +
-                flight.milestones.failed +
-                flight.milestones.success +
-                flight.milestones.missing +
-                flight.milestones.upcoming
-            }}</span
+            {{total}}</span
           ></span
         >
         <span class="dotAtRisk"></span>
@@ -89,14 +83,14 @@
         <span class="time">Actual Time &nbsp;{{ flight.actualTime }}</span>
       </div>
       <div class="card">
-        <span class="achived" style="color:blueviolet"
+        <span class="achived" [ngStyle]="{color:'blueviolet'}"
           >Next Upcoming &nbsp; RCF
           <img width="20" src="../../assets/img/plane.png" class="planeImg"
         /></span>
         <span class="time">Planned Time &nbsp;{{ flight.plannedTime }}</span>
       </div>
       <div class="card">
-        <span class="achived" style="color: rgb(77, 78, 100);">Total Transportation Time</span>
+        <span class="achived" [ngStyle]="{color: 'rgb(77, 78, 100)'}">Total Transportation Time</span>
         <span class="time">{{ flight.totalTime }}</span>
       </div>
     </div>
