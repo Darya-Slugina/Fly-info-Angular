@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../../flight.service';
-import { Flight } from 'src/flight';
+import { Flight, Status } from 'src/flight';
 import { FLIGHTSTITLES } from '../../mock-flight';
 
 @Component({
@@ -18,10 +18,10 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     this.flightServ.getFlight().subscribe((data) => (this.flights = data));
     this.total =
-      this.flights[0].milestones.atRisk +
-      this.flights[0].milestones.failed +
-      this.flights[0].milestones.success +
-      this.flights[0].milestones.missing +
-      this.flights[0].milestones.upcoming;
+      this.flights[0].milestones.atRisk.length +
+      this.flights[0].milestones.failed.length +
+      this.flights[0].milestones.success.length +
+      this.flights[0].milestones.missing.length +
+      this.flights[0].milestones.upcoming.length;
   }
 }

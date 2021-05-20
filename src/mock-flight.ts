@@ -7,20 +7,27 @@ export const FLIGHTS: Flight[] = [
     to: "SYD",
     airplaneType: "EK 414",
     milestones: {
-      atRisk: 1,
-      failed: 1,
-      success: 4,
-      missing: 1,
-      upcoming: 11,
+      atRisk: ["RCF"],
+      failed: ["FWB"],
+      success: ["BKD", "LAT", "DEP", "ARR"],
+      missing: ["RCS"],
+      upcoming: ["NFD", "AWD", "DLV"],
     },
-    actualTime: "21:10",
-    plannedTime: "22:30",
+    accieved: {
+      code: "ARR",
+      time: "21:10"
+    },
+    upcoming: {
+      code: "RCF",
+      time: "22:30"
+    },
     totalTime: "2 days 21 hours 50 minutes",
     imgURL: "https://www.flyswoop.com/images/icon-route.png",
-    product: "GCR",
-    shc: "PIL",
-    shipper:"Samsung",
-    forwarder: "SHC"
+    product: ["GCR"],
+    shc: ["PIL", "MIK", "GFR", "PLK"],
+    ancillaries: ["DDPU", "HHNK", "FGDS"],
+    shipper:["Samsung"],
+    forwarder: ["SHC"]
   }
 ];
 

@@ -1,0 +1,15 @@
+<span class="title" *ngIf="info.length > 1; else template"
+  >{{title}} <Strong class="text">{{ info[0] }}</Strong>
+  <span class="counter" (click)="onClick()">{{ info.length - 1 }}</span>
+</span>
+
+<ng-template [ngIf]="isVisible">
+  <span class="hiddenText">{{ filtered }}</span>
+</ng-template>
+
+<ng-template #template>
+  <span class="title"
+    >{{title}}
+    <Strong class="text">{{ info }}</Strong>
+  </span>
+</ng-template>

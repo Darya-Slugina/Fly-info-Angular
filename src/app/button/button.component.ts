@@ -2,13 +2,17 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button class="button">{{text}}</button>`,
+  templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
-  @Input() text: string = "";
+  @Input() text: string = '';
 
   constructor() {}
 
   ngOnInit() {}
+
+  public onClick(): void {
+    console.log(`You had clicked the button ${this.text}`);
+  }
 }

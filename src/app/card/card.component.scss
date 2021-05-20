@@ -24,19 +24,6 @@
       }
       .additional {
         margin-right: 10px;
-
-        .title {
-          color: rgb(119, 119, 119);
-          font-size: 13px;
-          margin-right: 5px;
-
-          .text {
-            color: rgb(95, 95, 95);
-            margin-right: 10px;
-            font-size: 14px;
-            text-transform: uppercase;
-          }
-        }
       }
     }
 
@@ -73,7 +60,7 @@
 
       .right {
         justify-content: flex-end;
-        margin-top: 10px;
+        margin-top: 40px;
         width: 800px;
         text-align: end;
         font-size: 16px;
