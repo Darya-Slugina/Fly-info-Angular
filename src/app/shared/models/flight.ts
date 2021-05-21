@@ -3,17 +3,9 @@ export interface Flight {
   from: string;
   to: string;
   airplaneType: string;
-  milestones: {
-    atRisk: string[];
-    failed: string[];
-    success: string[];
-    missing: string[];
-    upcoming: string[];
-  };
+  milestones: Milestones[];
   accieved: FlightData;
   upcoming: FlightData;
-  // actualTime: string;
-  // plannedTime: string;
   totalTime: string;
   imgURL: string;
   product: string[];
@@ -23,13 +15,14 @@ export interface Flight {
   forwarder: string[];
 }
 
+export interface Milestones {
+  code:string;
+  status: Status;
+}
+
 export interface FlightData {
   code: string;
   time: string;
-}
-
-export interface FlightTitle {
-  name: string;
 }
 
 export enum Status {

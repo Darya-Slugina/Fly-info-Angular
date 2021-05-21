@@ -11,14 +11,16 @@
       <div class="additional">
         <app-info [info]="flight.product" [title]="'Product'"></app-info>
         <app-info [info]="flight.shc" [title]="'SHC'"></app-info>
-        <app-info [info]="flight.ancillaries" [title]="'Ancillaries'"></app-info>
+        <app-info
+          [info]="flight.ancillaries"
+          [title]="'Ancillaries'"
+        ></app-info>
         <app-info [info]="flight.shipper" [title]="'Shipper'"></app-info>
         <app-info [info]="flight.forwarder" [title]="'Forwarder'"></app-info>
       </div>
     </div>
 
     <div class="flightInfo">
-
       <div class="left">
         <div class="top">
           <span class="direction"> {{ flight.from }}</span>
@@ -31,56 +33,47 @@
       </div>
 
       <div class="right">
-        <span class="title"> Total Milestones
-          <span class="text"> {{ total }}</span>
-        </span>
-<!-- enum for titles -->
-        <span class="dotAtRisk"></span>
-        <span class="title"> At Risk 
-          <span class="text"> {{ flight.milestones.atRisk.length }}</span>
+        <span class="title">
+          Total Milestones
+          <span class="text"> {{ flight.milestones.length }}</span>
         </span>
 
-        <span class="dotFailed"></span>
-        <span class="title">Failed 
-          <span class="text">{{ flight.milestones.failed.length }}</span>
-        </span>
-
-        <span class="dotSuccess"></span>
-        <span class="title">Success
-          <span class="text">{{ flight.milestones.success.length }}</span>
-        </span>
-
-        <span class="dotMissing"></span>
-        <span class="title">Missing
-          <span class="text">{{ flight.milestones.missing.length }}</span>
-          </span>
-
-        <span class="dotUpcoming"></span>
-        <span class="title">Upcoming
-          <span class="text">{{ flight.milestones.upcoming.length }}</span>
-          </span>
+        <app-category [number]="atRisk" [title]="'At Risk'" [class]="'atRisk'"></app-category>
+        <app-category [number]="failed" [title]="'Failed'" [class]="'failed'"></app-category>
+        <app-category [number]="success" [title]="'Success'" [class]="'success'"></app-category>
+        <app-category [number]="missing" [title]="'Missing'" [class]="'missing'"></app-category>
+        <app-category [number]="upcoming" [title]="'Upcoming'" [class]="'upcoming'"></app-category>
+        
       </div>
     </div>
   </div>
 
   <div class="timeInfo">
     <div class="iconContainer">
-      <span *ngFor="let item of flightsTitles" class="flightIcons">
-        {{ item.name }} 
+      <span *ngFor="let item of flight.milestones"
+        class="flightIcons"
+        [ngClass]="{
+          'green':item.status === 'Success',
+          'orange':item.status === 'AtRisk',
+          'red':item.status === 'Failed',
+          'blue':item.status === 'Missing',
+          'gray':item.status === 'Upcoming'
+          }">
+        {{ item.code }}
       </span>
     </div>
-    
+
     <div class="cardHolder">
       <div class="card">
         <span class="achived"
-          >Last Achieved &nbsp; {{flight.accieved.code}}
+          >Last Achieved &nbsp; {{ flight.accieved.code }}
           <img width="20" src="../../assets/img/plane.png" class="planeImg"
         /></span>
         <span class="time">Actual Time &nbsp;{{ flight.accieved.time }}</span>
       </div>
       <div class="card">
         <span class="achived" [ngStyle]="{ color: 'blueviolet' }"
-          >Next Upcoming &nbsp; {{flight.upcoming.code}}
+          >Next Upcoming &nbsp; {{ flight.upcoming.code }}
           <img width="20" src="../../assets/img/plane.png" class="planeImg"
         /></span>
         <span class="time">Planned Time &nbsp;{{ flight.upcoming.time }}</span>

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { Flight } from './flight';
-import { FLIGHTS } from './mock-flight';
+import { Flight } from '../models/flight';
+import { FLIGHTS } from '../models/mock-flight';
 
 
 @Injectable({ providedIn: 'root' })

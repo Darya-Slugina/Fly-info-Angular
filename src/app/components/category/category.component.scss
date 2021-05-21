@@ -1,0 +1,49 @@
+.atRisk {
+    width: 8px;
+    height: 8px;
+    background-color: orange;
+    margin: 2px;
+    display: inline-block;
+  }
+
+  .failed {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(189, 41, 41);
+    margin: 2px;
+    display: inline-block;
+  }
+
+  .success {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(0, 255, 34);
+    margin: 2px;
+    display: inline-block;
+  }
+
+  .missing {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(4, 0, 255);
+    margin: 2px;
+    display: inline-block;
+  }
+
+  .upcoming {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(124, 124, 124);
+    margin: 2px;
+    display: inline-block;
+  }
+
+  .title {
+    color: rgb(77, 77, 77);
+    margin-right: 10px;
+
+    .text {
+      color: black;
+      margin-right: 20px;
+    }
+  }
