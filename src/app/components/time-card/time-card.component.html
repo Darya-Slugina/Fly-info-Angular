@@ -1,0 +1,17 @@
+<div class="card">
+  <span class="achived" [ngStyle]="{ 'color': color }"
+    >{{ arrival }} &nbsp; <strong [ngClass]="{
+      green: status === 'Success',
+      orange: status === 'AtRisk',
+      red: status === 'Failed',
+      blue: status === 'Missing',
+      gray: status === 'Upcoming'
+    }">{{ code }}</strong>
+    <img
+      *ngIf="img"
+      width="20"
+      src="../../assets/img/plane.png"
+      class="planeImg"
+  /></span>
+  <span class="time">{{ type }} &nbsp;{{ time }}</span>
+</div>

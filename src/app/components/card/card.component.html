@@ -38,51 +38,82 @@
           <span class="text"> {{ flight.milestones.length }}</span>
         </span>
 
-        <app-category [number]="atRisk" [title]="'At Risk'" [class]="'atRisk'"></app-category>
-        <app-category [number]="failed" [title]="'Failed'" [class]="'failed'"></app-category>
-        <app-category [number]="success" [title]="'Success'" [class]="'success'"></app-category>
-        <app-category [number]="missing" [title]="'Missing'" [class]="'missing'"></app-category>
-        <app-category [number]="upcoming" [title]="'Upcoming'" [class]="'upcoming'"></app-category>
-        
+        <app-category
+          [number]="atRisk"
+          [title]="'At Risk'"
+          [class]="'atRisk'"
+        ></app-category>
+        <app-category
+          [number]="failed"
+          [title]="'Failed'"
+          [class]="'failed'"
+        ></app-category>
+        <app-category
+          [number]="success"
+          [title]="'Success'"
+          [class]="'success'"
+        ></app-category>
+        <app-category
+          [number]="missing"
+          [title]="'Missing'"
+          [class]="'missing'"
+        ></app-category>
+        <app-category
+          [number]="upcoming"
+          [title]="'Upcoming'"
+          [class]="'upcoming'"
+        ></app-category>
       </div>
     </div>
   </div>
 
   <div class="timeInfo">
     <div class="iconContainer">
-      <span *ngFor="let item of flight.milestones"
+      <span
+        *ngFor="let item of flight.milestones"
         class="flightIcons"
         [ngClass]="{
-          'green':item.status === 'Success',
-          'orange':item.status === 'AtRisk',
-          'red':item.status === 'Failed',
-          'blue':item.status === 'Missing',
-          'gray':item.status === 'Upcoming'
-          }">
+          green: item.status === 'Success',
+          orange: item.status === 'AtRisk',
+          red: item.status === 'Failed',
+          blue: item.status === 'Missing',
+          gray: item.status === 'Upcoming'
+        }"
+      >
         {{ item.code }}
       </span>
     </div>
 
     <div class="cardHolder">
-      <div class="card">
-        <span class="achived"
-          >Last Achieved &nbsp; {{ flight.accieved.code }}
-          <img width="20" src="../../assets/img/plane.png" class="planeImg"
-        /></span>
-        <span class="time">Actual Time &nbsp;{{ flight.accieved.time }}</span>
+      <div class="leftWrapper">
+        <app-time-card
+          [arrival]="'Last Achieved'"
+          [code]="flight.accieved.code"
+          [img]="true"
+          [type]="'Actual Time'"
+          [time]="flight.accieved.time"
+          color="green"
+          [status]="flight.accieved.status"
+        ></app-time-card>
+
+        <app-time-card
+          [arrival]="'Next Upcoming'"
+          [code]="flight.upcoming.code"
+          [img]="true"
+          [type]="'Planned Time'"
+          [time]="flight.upcoming.time"
+          color="blueviolet"
+          [status]="flight.upcoming.status"
+        ></app-time-card>
       </div>
-      <div class="card">
-        <span class="achived" [ngStyle]="{ color: 'blueviolet' }"
-          >Next Upcoming &nbsp; {{ flight.upcoming.code }}
-          <img width="20" src="../../assets/img/plane.png" class="planeImg"
-        /></span>
-        <span class="time">Planned Time &nbsp;{{ flight.upcoming.time }}</span>
-      </div>
-      <div class="card">
-        <span class="achived" [ngStyle]="{ color: 'rgb(77, 78, 100)' }"
-          >Total Transportation Time</span
-        >
-        <span class="time">{{ flight.totalTime }}</span>
+
+      <div class="rightWrapper">
+        <app-time-card
+          [arrival]="'Total Transportation Time'"
+          [img]="false"
+          [time]="flight.totalTime"
+          color="rgb(77, 78, 100)"
+        ></app-time-card>
       </div>
     </div>
   </div>

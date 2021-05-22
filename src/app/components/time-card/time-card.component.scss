@@ -1,0 +1,51 @@
+.card {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  width: 320px;
+  height: 40px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .achived {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    text-align: center;
+    padding-right: 15px;
+    border-right: 1px solid grey;
+
+    .red {
+      color: red ;
+      font-size: 14px;
+    }
+
+    .green {
+      color: green;
+      font-size: 14px;
+    }
+
+    .blue {
+      color: blue;
+      font-size: 14px;
+    }
+
+    .orange {
+      color: orange;
+      font-size: 14px;
+    }
+
+    .gray {
+      color: gray;
+      font-size: 14px;
+    }
+  }
+
+  .time {
+    color: grey;
+    padding-right: 10px;
+    display: flex;
+  }
+}

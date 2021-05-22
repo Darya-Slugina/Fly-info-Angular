@@ -176,8 +176,6 @@
             background-color: rgb(218, 218, 218);
           }
         }
-
-        
       }
     }
   }
@@ -185,35 +183,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-    .card {
-      background-color: white;
-      border-radius: 5px;
-      border: none;
-      width: 300px;
-      height: 40px;
-      font-size: 11px;
+    margin: 15px;
+
+    .leftWrapper {
       display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+      justify-content: space-between;
+      width: 660px;
 
-      .achived {
-        display: flex;
-        align-items: center;
-        color: green;
-        padding-left: 10px;
-        text-align: center;
-        padding-right: 15px;
-        border-right: 1px solid grey;
-      }
-
-      .time {
-        color: grey;
-        padding-right: 10px;
-        display: flex;
-      }
     }
   }
 }

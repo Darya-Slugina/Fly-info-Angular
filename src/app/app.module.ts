@@ -7,6 +7,7 @@ import { CardComponent } from './components/card/card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { InfoComponent } from './components/info/info.component';
 import { CategoryComponent } from './components/category/category.component';
+import {TimeCardComponent} from './components/time-card/time-card.component';
 
 @NgModule({
   declarations: [						
@@ -14,7 +15,8 @@ import { CategoryComponent } from './components/category/category.component';
       CardComponent,
       ButtonComponent,
       InfoComponent,
-      CategoryComponent
+      CategoryComponent,
+      TimeCardComponent
    ],
   imports: [
     BrowserModule,

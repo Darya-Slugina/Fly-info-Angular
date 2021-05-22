@@ -22,6 +22,7 @@ export interface Milestones {
 
 export interface FlightData {
   code: string;
+  status: Status;
   time: string;
 }
 

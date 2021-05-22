@@ -20,10 +20,12 @@ export const FLIGHTS: Flight[] = [
     ],
     accieved: {
       code: 'ARR',
+      status: Status.Success,
       time: '21:10',
     },
     upcoming: {
       code: 'RCF',
+      status: Status.AtRisk,
       time: '22:30',
     },
     totalTime: '2 days 21 hours 50 minutes',
