@@ -11,6 +11,6 @@ export class TimeCardComponent {
   @Input() type?: string = '';
   @Input() time: string = '';
   @Input() img: boolean = false;
-  @Input() color!: string;
-  @Input() status!: string;
+  @Input() color: string = '';
+  @Input() status: string = '';
 }

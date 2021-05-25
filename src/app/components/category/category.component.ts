@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Status } from 'src/app/shared/models/enum';
-import {Flight, Milestones} from '../../shared/models/flight.model'
+import {Flight} from '../../shared/models/flight.model'
 
 @Component({
   selector: 'app-category',
@@ -8,14 +8,18 @@ import {Flight, Milestones} from '../../shared/models/flight.model'
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit{
-  @Input() flight!: Flight;
+  @Input() flight: Flight;
   @Input() title: string = '';
   @Input() type: string = '';
 
   public flightCount: any;
 
   ngOnInit() {
-    this.flightCount = this.flight.milestones.reduce(function(counts, el) {
+    this.getStatusCount();
+  }
+
+  public getStatusCount() {
+    this.flightCount = this.flight.milestones.reduce((counts, el) => {
       if (el.status === Status.AtRisk) {
         counts['atRisk']++;
       } else if (el.status === Status.Failed) {
