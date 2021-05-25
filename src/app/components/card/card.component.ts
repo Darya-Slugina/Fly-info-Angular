@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../../shared/services/flight.service';
-import { Flight } from 'src/app/shared/models/flight';
+import { Flight } from 'src/app/shared/models/flight.model';
 
 @Component({
   selector: 'app-card',
@@ -19,21 +19,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     this.flightServ.getFlight().subscribe((data) => (this.flights = data));
-    this.atRisk = this.flights[0].milestones.filter(
-      (el) => el.status === 'AtRisk'
-    ).length;
-    this.failed = this.flights[0].milestones.filter(
-      (el) => el.status === 'Failed'
-    ).length;
-    this.success = this.flights[0].milestones.filter(
-      (el) => el.status === 'Success'
-    ).length;
-    this.missing = this.flights[0].milestones.filter(
-      (el) => el.status === 'Missing'
-    ).length;
-    this.upcoming = this.flights[0].milestones.filter(
-      (el) => el.status === 'Upcoming'
-    ).length;
   }
 
   public getColor(status: string):any {

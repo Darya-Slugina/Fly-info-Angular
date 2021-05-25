@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-time-card',
   templateUrl: './time-card.component.html',
   styleUrls: ['./time-card.component.scss'],
 })
-export class TimeCardComponent implements OnInit {
+export class TimeCardComponent {
   @Input() arrival: string = '';
   @Input() code?: string = '';
   @Input() type?: string = '';
@@ -13,8 +13,4 @@ export class TimeCardComponent implements OnInit {
   @Input() img: boolean = false;
   @Input() color!: string;
   @Input() status!: string;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

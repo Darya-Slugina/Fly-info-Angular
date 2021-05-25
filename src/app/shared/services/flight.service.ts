@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { Flight } from '../models/flight';
+import { Flight } from '../models/flight.model';
 import { FLIGHTS } from '../models/mock-flight';
 
 

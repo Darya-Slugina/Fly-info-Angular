@@ -12,13 +12,11 @@ export class InfoComponent implements OnInit {
   public isVisible:boolean = false;
   public filtered: string[] = [];
 
-  constructor() { }
-
   ngOnInit() {
     this.filtered = this.info.filter(el => el !== this.info[0])
   }
 
-  public onClick():void {
+  public tooltipToggle():void {
     this.isVisible = !this.isVisible;
   }
 }

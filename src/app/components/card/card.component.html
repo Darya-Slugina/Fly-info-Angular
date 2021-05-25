@@ -39,29 +39,29 @@
         </span>
 
         <app-category
-          [number]="atRisk"
+          [flight]="flight"
           [title]="'At Risk'"
-          [class]="'atRisk'"
+          [type]="'atRisk'"
         ></app-category>
         <app-category
-          [number]="failed"
+          [flight]="flight"
           [title]="'Failed'"
-          [class]="'failed'"
+          [type]="'failed'"
         ></app-category>
         <app-category
-          [number]="success"
+          [flight]="flight"
           [title]="'Success'"
-          [class]="'success'"
+          [type]="'success'"
         ></app-category>
         <app-category
-          [number]="missing"
+          [flight]="flight"
           [title]="'Missing'"
-          [class]="'missing'"
+          [type]="'missing'"
         ></app-category>
         <app-category
-          [number]="upcoming"
+          [flight]="flight"
           [title]="'Upcoming'"
-          [class]="'upcoming'"
+          [type]="'upcoming'"
         ></app-category>
       </div>
     </div>
@@ -72,13 +72,7 @@
       <span
         *ngFor="let item of flight.milestones"
         class="flightIcons"
-        [ngClass]="{
-          green: item.status === 'Success',
-          orange: item.status === 'AtRisk',
-          red: item.status === 'Failed',
-          blue: item.status === 'Missing',
-          gray: item.status === 'Upcoming'
-        }"
+        [ngClass]="getColor(item.status)"
       >
         {{ item.code }}
       </span>
@@ -92,7 +86,7 @@
           [img]="true"
           [type]="'Actual Time'"
           [time]="flight.accieved.time"
-          color="green"
+          [color]="'green'"
           [status]="flight.accieved.status"
         ></app-time-card>
 
@@ -102,7 +96,7 @@
           [img]="true"
           [type]="'Planned Time'"
           [time]="flight.upcoming.time"
-          color="blueviolet"
+          [color]="'blueviolet'"
           [status]="flight.upcoming.status"
         ></app-time-card>
       </div>
@@ -112,7 +106,7 @@
           [arrival]="'Total Transportation Time'"
           [img]="false"
           [time]="flight.totalTime"
-          color="rgb(77, 78, 100)"
+          [color]="'rgb(77, 78, 100)'"
         ></app-time-card>
       </div>
     </div>

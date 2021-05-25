@@ -1,3 +1,5 @@
+import {Status} from './enum'
+
 export interface Flight {
   id: string;
   from: string;
@@ -26,10 +28,4 @@ export interface FlightData {
   time: string;
 }
 
-export enum Status {
-  AtRisk = 'AtRisk',
-  Failed = 'Failed',
-  Success = 'Success',
-  Missing = 'Missing',
-  Upcoming = 'Upcoming',
-}
+
