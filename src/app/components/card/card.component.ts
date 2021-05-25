@@ -9,11 +9,6 @@ import { Flight } from 'src/app/shared/models/flight.model';
 })
 export class CardComponent implements OnInit {
   public flights: Flight[] = [];
-  public atRisk: number = 0;
-  public failed: number = 0;
-  public success: number = 0;
-  public missing: number = 0;
-  public upcoming: number = 0;
 
   constructor(private flightServ: FlightService) {}
 
